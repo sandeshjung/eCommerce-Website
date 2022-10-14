@@ -34,12 +34,19 @@ const CartScreen = () => {
     }
   }, [dispatch, productId, qty]);
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
 
   const checkOutHandler = () => {
-    navigate("/login?redirect=shipping");
+    if (!userInfo) {
+      navigate("/login");
+    } else {
+      navigate("/shipping");
+    }
   };
 
   return (
