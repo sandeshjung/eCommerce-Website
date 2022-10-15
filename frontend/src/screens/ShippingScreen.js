@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
-import { useNavigate } from "react-router-dom";
+import CheckOutSteps from "../components/CheckOutSteps";
 import { saveShippingAddress } from "../actions/cartActions";
+import { useNavigate } from "react-router-dom";
 
 const ShippingScreen = () => {
   const cart = useSelector((state) => state.cart);
@@ -14,8 +15,8 @@ const ShippingScreen = () => {
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
   const [country, setCountry] = useState(shippingAddress.country);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -25,13 +26,14 @@ const ShippingScreen = () => {
 
   return (
     <FormContainer>
+      <CheckOutSteps step1 step2 />
       <h1>Shipping</h1>
-      <Form onScroll={submitHandler}>
+      <Form onSubmit={submitHandler}>
         <Form.Group controlId="address">
           <Form.Label>Address</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter Address"
+            placeholder="Enter address"
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -70,6 +72,7 @@ const ShippingScreen = () => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
+
         <Button type="submit" variant="primary">
           Continue
         </Button>
