@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
@@ -137,12 +137,17 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              {/* <Form.File
                 id="image-file"
                 label="Choose File"
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              ></Form.File> */}
+
+              <Form.Group controlId="inage-file" className="mb-3">
+                <Form.Control type="file" onChange={uploadFileHandler} />
+              </Form.Group>
+
               {uploading && <Loader />}
             </Form.Group>
 
