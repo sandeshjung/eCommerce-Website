@@ -18,6 +18,7 @@ import { listProductDetails } from "../actions/productActions";
 
 const ProductScreen = () => {
   const [qty, setQty] = useState(1);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const productDetails = useSelector((state) => state.productDetails);

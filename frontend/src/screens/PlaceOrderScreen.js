@@ -3,7 +3,7 @@ import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import CheckOutSteps from "../components/CheckOutSteps";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createOrder } from "../actions/orderActions";
 
 const PlaceOrderScreen = () => {
@@ -33,7 +33,7 @@ const PlaceOrderScreen = () => {
 
   useEffect(() => {
     if (success) {
-      Navigate(`/order/${order._id}`);
+      navigate(`/order/${order._id}`);
     }
     // eslint-disable-next-line
   }, [navigate, success]);

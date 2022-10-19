@@ -144,7 +144,7 @@ const ProductEditScreen = () => {
                 onChange={uploadFileHandler}
               ></Form.File> */}
 
-              <Form.Group controlId="inage-file" className="mb-3">
+              <Form.Group controlId="image-file" className="mb-3">
                 <Form.Control type="file" onChange={uploadFileHandler} />
               </Form.Group>
 
