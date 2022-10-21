@@ -1,7 +1,9 @@
 import React from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
 
 const Header = () => {
@@ -20,6 +22,12 @@ const Header = () => {
             <Navbar.Brand>NepShop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse
+            className="justify-content-center"
+            id="basic-navbar-nav"
+          >
+            <SearchBox />
+          </Navbar.Collapse>
           <Navbar.Collapse
             className="justify-content-end"
             id="basic-navbar-nav"
