@@ -1,5 +1,6 @@
 # eCommerce-Website
-This is a simple ecommerce website built with MERN stack. The use of Redux has also simplified the built.
+This is a simple ecommerce website with all the features a ecommerce website should have. It was built using mern stack. You can try it yourself on the following link:
+https://nepshop.herokuapp.com/
 ![image](https://user-images.githubusercontent.com/11364442/197216309-49ac4448-b258-4838-bcb8-b8d64cdb2842.png)
 ## Features
 * Full featured shopping cart
